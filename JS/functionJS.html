@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function: in javascript a function is a reusable block of code desighned to perform a specific task
+
+        //normal fn
+        //without parameters
+        function demo(){
+            console.log("hello js")
+        }
+        //function calling
+        //with parameters
+        function demo1(text){
+            console.log("hello "+ text);
+        }
+
+
+        //with default parameters
+
+        function cal(a,b=30){
+            console.log("addition of two number is : "+(a+b));
+        }
+         demo1("React");
+        cal(12);
+         demo();
+
+         //anonymous function:an anonymous fn injs is a fn that does not have any name or identifier
+         let msg=function(){
+            console.log("hello advanced js");
+         };
+         msg();
+         //short code for above fn i.e arrow fn
+         let msg1=()=>console.log("hello function as an arrow");
+         msg1();
+         //arrow fn using multilines
+         let add=(a,b)=>{
+                console.log("addition of two number is : "+(a+b));
+
+         }
+         add(4,5);
+
+          //IIFE immediately invoked function expression 
+        //   It is a js function that run as soon as it is defined
+         (function(){
+            console.log("iife in js");
+         })();
+
+         //IIFE using arrow
+         ( ()=> console.log("iife using arrow"))();
+
+         //callback function:
+         // callback function is a function passed as an argument into another function,
+         //  intended to be executed ("called back") later—either immediately (synchronous) 
+         // or after an asynchronous operation completes. 
+         function mul(callback){
+            var num1=10;
+            console.log("first value is :"+ num1);
+            var num2=20;
+            console.log("second number is :" + num2);
+
+            var res=num1*num2;
+            callback(res);
+         }
+         function result(res){
+            console.log("multiplication is "+ res);
+
+         }
+         mul(result);
+        //callback fn using set timeout API
+
+        function msgg(){
+            console.log("hello call back ");
+           
+        }
+        function loading (){
+             document.writeln("loading.....")
+        };
+        setTimeout(msgg,2000);
+        loading();
+        // map filter and reduce 
+        let num=[2,3,5,7];
+        let finalresult=num.map(n=>n*2);
+        console.log(finalresult);
+
+        //filter method : method ceate a new array of ....
+
+        let finalresult1=num.filter(n=>(n>3));
+        console.log(finalresult1);
+        //reduce method : executes a user supplied "reducer" call back ....
+        let finalresult2=num.reduce((total,n)=>total+n);
+        console.log(finalresult2);
+        //JavaScript promises are objects that represent the eventual completion (or failure) 
+        // of an asynchronous operation and its resulting value.
+        //promises stage
+        //Pending: The initial state; the asynchronous operation is still in progress, and the result is not yet available. 
+        // fullilled (or Resolved): The operation completed successfully, and a value is available. object
+        //The operation failed, and a reason (error) is available. 
+
+        let promise=new Promise(function (resolve,reject){  
+            let age=25;    
+             if(age>=18){
+                resolve("valid age");
+             } 
+             else{
+                rejct("wait for next year");
+             }
+        })
+        promise.then(result=>console.log(result)).
+        catch(error=>console.log(error)).
+        finally(msg=>console.log("done"));
+
+        async function userData(){
+            try{
+                let data=await fetch('https://dummyjson.com/products');
+                let updateData=await data.json();
+                console.log(udateData);
+            }
+            catch(error){
+                console.log("not fetched"+ error);
+            }
+        }
+        userData();
+        let userInfo = {
+            name : "john",
+            age:23,
+            mob:72623891,
+            eMail:"john23223@gmail.com"
+        }
+localStoragee.setItem('preference',JSON.stringify(userInfo));
+let storagePreference=JSON.parse(localStorage.getItem('preferences'));
+console.log(storagePreferences.name);5
+    </script>
+</body>
+</html>
