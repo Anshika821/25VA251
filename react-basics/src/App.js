@@ -1,10 +1,15 @@
-import Welcome from "./Welcome";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App()
 {
     return (
         <div>
-            <Welcome />
+            <Header />
+            
+            <p>This is my first React website.</p>
+
+            <Footer />
         </div>
     );
 }
