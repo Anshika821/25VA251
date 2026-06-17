@@ -1,0 +1,18 @@
+function validateForm()
+{
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if(name === "")
+    {
+        alert("Name is required");
+    }
+    else if(email === "")
+    {
+        alert("Email is required");
+    }
+    else
+    {
+        alert("Form Submitted Successfully");
+    }
+}
