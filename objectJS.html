@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in JS</title>
+</head>
+<body>
+    <script>
+        //object{} - it is a collection or pair of keys(properties)and its value.
+        //create object-literal{ } and new keyword 
+
+        //create object for student 
+        let student={
+                id:101,name:"abhay",
+                age:19,
+                ismarried:false,
+              address:{
+                  streetno:2,
+                area:"indrapuram",
+                pincode:286769,
+                city:"ghaziabad"
+
+              },
+              education:["B.Tech","cse-aiml",18,2025],
+              getInfo:function(){
+                return "my details are "+student.id +"and"+student.name;
+              },
+              examDone:null
+        };
+        console.log(student);
+        console.log(typeof (student));
+        console.log(student.getInfo());
+        console.log(student.examdone);
+  //find object's keys in object
+  console.log('id'in student);
+  //delete object's keys from object
+  console.log(delete student.name);
+  console.log(student);
+  //object length
+  let studentkeys=Object.keys(student);
+  console.log(studentkeys.length);
+  //iterrate keys of object
+  //using for---loop
+  for(let i=0;i<studentkeys.length;i++){
+    console.log("details are"+student[studentkeys[i]]);
+  }
+  //for in loop
+   for(let x in student){
+    console.log(student[x]);
+   }
+   // create a object using new keyword
+   let myInfo=new Object();
+   myInfo.name="anshika";
+   myInfo.age=18;
+   myInfo.city="meerut";
+   console.log(myInfo);
+   //access object property using [] notation
+   console.log(myInfo['age']);
+
+   
+
+    </script>
+</body>
+</html>
+
